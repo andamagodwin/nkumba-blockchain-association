@@ -33,7 +33,7 @@ export default function Home() {
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-nkumba-yellow opacity-5 blur-[120px] rounded-full" />
 
       <PillNav 
-        logo="/logo.svg"
+        logo="/nkumba-logo.jpeg"
         logoAlt="Nkumba Blockchain Logo"
         items={[
           { label: 'Home', href: '#' },
@@ -41,6 +41,7 @@ export default function Home() {
           { label: 'Learning', href: '#learning' },
           { label: 'Sessions', href: '#sessions' }
         ]}
+        cta={{ label: 'Join', href: '#join' }}
         baseColor="#1D3E93"
         pillColor="#020617"
         pillTextColor="#F8FAFC"
@@ -126,8 +127,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <BorderGlow className="h-full" glowColor="223 67 35" colors={['#1D3E93', '#F2ED00', '#173277']}>
               <div className="p-8 h-full flex flex-col">
-                <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
-                  <Code size="24" color="#1D3E93" variant="Bulk" />
+                <div className="mb-6">
+                  <Code size="40" color="#F2ED00" variant="Bulk" />
                 </div>
                 <h4 className="text-xl font-bold text-white mb-3">Web3 Development</h4>
                 <p className="text-slate-400 text-sm leading-relaxed">
@@ -138,8 +139,8 @@ export default function Home() {
 
             <BorderGlow className="h-full" glowColor="59 100 47" colors={['#F2ED00', '#1D3E93', '#173277']}>
               <div className="p-8 h-full flex flex-col">
-                <div className="w-12 h-12 rounded-xl bg-nkumba-yellow/10 flex items-center justify-center mb-6 border border-nkumba-yellow/20">
-                  <SecuritySafe size="24" color="#F2ED00" variant="Bulk" />
+                <div className="mb-6">
+                  <SecuritySafe size="40" color="#F2ED00" variant="Bulk" />
                 </div>
                 <h4 className="text-xl font-bold text-white mb-3">Smart Contracts</h4>
                 <p className="text-slate-400 text-sm leading-relaxed">
@@ -150,8 +151,8 @@ export default function Home() {
 
             <BorderGlow className="h-full" glowColor="223 67 35" colors={['#173277', '#F2ED00', '#1D3E93']}>
               <div className="p-8 h-full flex flex-col">
-                <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
-                  <MoneySend size="24" color="#1D3E93" variant="Bulk" />
+                <div className="mb-6">
+                  <MoneySend size="40" color="#F2ED00" variant="Bulk" />
                 </div>
                 <h4 className="text-xl font-bold text-white mb-3">DeFi & Tokenomics</h4>
                 <p className="text-slate-400 text-sm leading-relaxed">
@@ -209,9 +210,7 @@ export default function Home() {
       <footer className="py-12 px-6 border-t border-white/5 bg-slate-950/20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-nkumba flex items-center justify-center">
-              <span className="text-sm font-bold text-white">N</span>
-            </div>
+            <img src="/nkumba-logo.jpeg" alt="Nkumba Logo" className="w-8 h-8 rounded-lg object-cover" />
             <span className="text-lg font-bold text-white">
               Nkumba Blockchain <span className="text-nkumba-yellow">Club</span>
             </span>

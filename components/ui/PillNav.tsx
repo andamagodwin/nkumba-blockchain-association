@@ -10,10 +10,17 @@ export type PillNavItem = {
   ariaLabel?: string;
 };
 
+export type PillNavCTA = {
+  label: string;
+  href: string;
+  className?: string;
+};
+
 export interface PillNavProps {
   logo: string;
   logoAlt?: string;
   items: PillNavItem[];
+  cta?: PillNavCTA;
   activeHref?: string;
   className?: string;
   ease?: string;
@@ -29,6 +36,7 @@ const PillNav: React.FC<PillNavProps> = ({
   logo,
   logoAlt = 'Logo',
   items,
+  cta,
   activeHref,
   className = '',
   ease = 'power3.easeOut',
@@ -242,10 +250,10 @@ const PillNav: React.FC<PillNavProps> = ({
     ['--pill-bg']: pillColor,
     ['--hover-text']: hoveredPillTextColor,
     ['--pill-text']: resolvedPillTextColor,
-    ['--nav-h']: '42px',
-    ['--logo']: '36px',
-    ['--pill-pad-x']: '18px',
-    ['--pill-gap']: '3px'
+    ['--nav-h']: '52px',
+    ['--logo']: '42px',
+    ['--pill-pad-x']: '24px',
+    ['--pill-gap']: '4px'
   } as React.CSSProperties;
 
   return (
@@ -388,6 +396,26 @@ const PillNav: React.FC<PillNavProps> = ({
                 </li>
               );
             })}
+
+            {cta && (
+              <li role="none" className="flex h-full ml-1">
+                {isRouterLink(cta.href) ? (
+                  <Link
+                    href={cta.href}
+                    className="relative overflow-hidden inline-flex items-center justify-center h-full no-underline rounded-2xl box-border font-bold text-[14px] leading-[0] uppercase tracking-[0.5px] whitespace-nowrap cursor-pointer px-6 bg-nkumba-yellow text-nkumba-blue hover:scale-105 transition-transform duration-200"
+                  >
+                    {cta.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={cta.href}
+                    className="relative overflow-hidden inline-flex items-center justify-center h-full no-underline rounded-2xl box-border font-bold text-[14px] leading-[0] uppercase tracking-[0.5px] whitespace-nowrap cursor-pointer px-6 bg-nkumba-yellow text-nkumba-blue hover:scale-105 transition-transform duration-200"
+                  >
+                    {cta.label}
+                  </a>
+                )}
+              </li>
+            )}
           </ul>
         </div>
 
