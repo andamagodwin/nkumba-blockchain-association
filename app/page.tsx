@@ -1,7 +1,7 @@
 import React from "react";
 import PillNav from "@/components/ui/PillNav";
+import BorderGlow from "@/components/ui/BorderGlow";
 import { Button } from "@/components/ui/Button";
-import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
 import Aurora from "@/components/ui/Aurora";
 import { 
@@ -117,7 +117,6 @@ export default function Home() {
         {/* Learning/Curriculum Section */}
         <Section id="learning" className="bg-slate-950/30">
           <div className="text-center mb-16">
-            <h2 className="text-nkumba-blue font-bold uppercase tracking-wider text-sm mb-4">Core Pillars</h2>
             <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">What We Learn & <span className="text-nkumba-yellow">Build</span></h3>
             <p className="text-slate-400 max-w-2xl mx-auto">
               Our curriculum is designed to take you from blockchain basics to building your own decentralized applications.
@@ -125,35 +124,41 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <GlassCard glowColor="blue">
-              <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
-                <Code size="24" color="#1D3E93" variant="Bulk" />
+            <BorderGlow className="h-full" glowColor="223 67 35" colors={['#1D3E93', '#F2ED00', '#173277']}>
+              <div className="p-8 h-full flex flex-col">
+                <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
+                  <Code size="24" color="#1D3E93" variant="Bulk" />
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Web3 Development</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Learn to build DApps using React, Ethers.js, and modern blockchain frameworks. Connect the web to the blockchain.
+                </p>
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">Web3 Development</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Learn to build DApps using React, Ethers.js, and modern blockchain frameworks. Connect the web to the blockchain.
-              </p>
-            </GlassCard>
+            </BorderGlow>
 
-            <GlassCard glowColor="yellow">
-              <div className="w-12 h-12 rounded-xl bg-nkumba-yellow/10 flex items-center justify-center mb-6 border border-nkumba-yellow/20">
-                <SecuritySafe size="24" color="#F2ED00" variant="Bulk" />
+            <BorderGlow className="h-full" glowColor="59 100 47" colors={['#F2ED00', '#1D3E93', '#173277']}>
+              <div className="p-8 h-full flex flex-col">
+                <div className="w-12 h-12 rounded-xl bg-nkumba-yellow/10 flex items-center justify-center mb-6 border border-nkumba-yellow/20">
+                  <SecuritySafe size="24" color="#F2ED00" variant="Bulk" />
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Smart Contracts</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Master Solidity and Rust to write secure, scalable smart contracts that power the decentralized economy.
+                </p>
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">Smart Contracts</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Master Solidity and Rust to write secure, scalable smart contracts that power the decentralized economy.
-              </p>
-            </GlassCard>
+            </BorderGlow>
 
-            <GlassCard glowColor="blue">
-              <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
-                <MoneySend size="24" color="#1D3E93" variant="Bulk" />
+            <BorderGlow className="h-full" glowColor="223 67 35" colors={['#173277', '#F2ED00', '#1D3E93']}>
+              <div className="p-8 h-full flex flex-col">
+                <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
+                  <MoneySend size="24" color="#1D3E93" variant="Bulk" />
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">DeFi & Tokenomics</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Explore the world of Decentralized Finance, liquidity pools, and the economic models behind successful protocols.
+                </p>
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">DeFi & Tokenomics</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Explore the world of Decentralized Finance, liquidity pools, and the economic models behind successful protocols.
-              </p>
-            </GlassCard>
+            </BorderGlow>
           </div>
         </Section>
 
