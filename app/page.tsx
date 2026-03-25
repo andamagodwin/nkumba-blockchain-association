@@ -1,65 +1,196 @@
-import Image from "next/image";
+import React from "react";
+import { Navbar } from "@/components/ui/Navbar";
+import { Button } from "@/components/ui/Button";
+import { GlassCard } from "@/components/ui/GlassCard";
+import { Section } from "@/components/ui/Section";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="relative min-h-screen bg-background selection:bg-nkumba-blue/30 overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-nkumba-blue opacity-10 blur-[120px] rounded-full" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-nkumba-yellow opacity-5 blur-[120px] rounded-full" />
+
+      <Navbar />
+
+      <main>
+        {/* Hero Section */}
+        <Section className="pt-40 pb-32">
+          <div className="flex flex-col items-center text-center gap-8 max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-nkumba-blue/20 text-sm font-medium text-nkumba-blue animate-fade-in">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nkumba-blue opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-nkumba-blue"></span>
+              </span>
+              Empowering the Next Generation of Web3 Builders
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+              Innovation Meets <br />
+              <span className="bg-gradient-to-r from-nkumba-blue to-cyan-400 bg-clip-text text-transparent">Decentralization</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
+              Join the Nkumba Blockchain Club to learn, build, and innovate. 
+              Discover the future of finance, technology, and identity every Friday.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+              <Button variant="primary" className="w-full sm:w-auto px-10 py-4 text-lg border-glow-blue">
+                Join the Mission
+              </Button>
+              <Button variant="outline" className="w-full sm:w-auto px-10 py-4 text-lg">
+                View Curriculum
+              </Button>
+            </div>
+          </div>
+
+          {/* Hero Visual Mockup */}
+          <div className="mt-20 relative px-4">
+            <div className="max-w-5xl mx-auto glass p-2 border-white/5 rounded-[2.5rem] bg-slate-900/20">
+              <div className="w-full aspect-[16/9] rounded-[2rem] bg-slate-950 overflow-hidden relative flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-nkumba-blue/10 to-transparent" />
+                <div className="relative group cursor-pointer transition-transform duration-500 hover:scale-[1.02]">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-nkumba-blue to-nkumba-yellow rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                  <div className="relative glass p-8 border-white/10">
+                    <div className="flex items-center gap-6">
+                      <div className="w-16 h-16 rounded-full bg-nkumba-blue/20 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-nkumba-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <div className="text-left">
+                        <div className="text-xs uppercase tracking-widest text-nkumba-blue font-bold">Friday Sessions</div>
+                        <div className="text-2xl font-bold text-white">Blockchain Workshops</div>
+                        <div className="text-slate-400">Nkumba University Main Campus • 2:00 PM</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* Learning/Curriculum Section */}
+        <Section id="learning" className="bg-slate-950/30">
+          <div className="text-center mb-16">
+            <h2 className="text-nkumba-blue font-bold uppercase tracking-wider text-sm mb-4">Core Pillars</h2>
+            <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">What We Learn & Build</h3>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Our curriculum is designed to take you from blockchain basics to building your own decentralized applications.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <GlassCard glowColor="blue">
+              <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
+                <svg className="w-6 h-6 text-nkumba-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Web3 Development</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Learn to build DApps using React, Ethers.js, and modern blockchain frameworks. Connect the web to the blockchain.
+              </p>
+            </GlassCard>
+
+            <GlassCard glowColor="yellow">
+              <div className="w-12 h-12 rounded-xl bg-nkumba-yellow/10 flex items-center justify-center mb-6 border border-nkumba-yellow/20">
+                <svg className="w-6 h-6 text-nkumba-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Smart Contracts</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Master Solidity and Rust to write secure, scalable smart contracts that power the decentralized economy.
+              </p>
+            </GlassCard>
+
+            <GlassCard glowColor="blue">
+              <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
+                <svg className="w-6 h-6 text-nkumba-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">DeFi & Tokenomics</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Explore the world of Decentralized Finance, liquidity pools, and the economic models behind successful protocols.
+              </p>
+            </GlassCard>
+          </div>
+        </Section>
+
+        {/* Friday Sessions Section */}
+        <Section id="sessions" className="relative">
+          <div className="glass p-12 overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-nkumba-yellow/10 blur-3xl -mr-32 -mt-32 rounded-full" />
+            <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+              <div className="max-w-xl">
+                <h3 className="text-4xl font-bold text-white mb-6">Every Friday at Nkumba</h3>
+                <p className="text-slate-300 text-lg mb-8 leading-relaxed">
+                  We gather every Friday at the Nkumba University campus to discuss the latest in blockchain, 
+                  work on projects, and host guest speakers from the industry.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  {[
+                    "Hands-on coding workshops",
+                    "Blockchain industry networking",
+                    "Project showcase & feedback",
+                    "Free resources for members"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-slate-300">
+                      <div className="w-5 h-5 rounded-full bg-nkumba-blue/20 flex items-center justify-center">
+                        <svg className="w-3 h-3 text-nkumba-blue" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Button variant="primary" className="border-glow-blue px-10">
+                  Save My Seat
+                </Button>
+              </div>
+              <div className="flex-1 w-full max-w-md aspect-square glass border-nkumba-yellow/20 flex items-center justify-center bg-nkumba-yellow/5">
+                <div className="text-center p-8">
+                  <div className="text-6xl font-black text-nkumba-yellow mb-2 tracking-tighter">FRI</div>
+                  <div className="text-xl font-bold text-white uppercase tracking-widest">Sessions</div>
+                  <div className="h-px w-24 bg-white/10 mx-auto my-6" />
+                  <div className="text-slate-400 text-sm mb-4">Starting at</div>
+                  <div className="text-3xl font-bold text-white mb-1">2:00 PM</div>
+                  <div className="text-nkumba-blue text-sm font-medium">Nkumba Main Campus</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
       </main>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 border-t border-white/5 bg-slate-950/20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-nkumba flex items-center justify-center">
+              <span className="text-sm font-bold text-white">N</span>
+            </div>
+            <span className="text-lg font-bold text-white">
+              Nkumba Blockchain <span className="text-nkumba-yellow">Club</span>
+            </span>
+          </div>
+          
+          <div className="text-slate-500 text-sm">
+            © 2026 Nkumba Blockchain Association. All rights reserved.
+          </div>
+
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-slate-400 hover:text-white transition-colors">Twitter</a>
+            <a href="#" className="text-slate-400 hover:text-white transition-colors">LinkedIn</a>
+            <a href="#" className="text-slate-400 hover:text-white transition-colors">GitHub</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
