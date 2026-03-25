@@ -73,11 +73,11 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-              <Button variant="primary" className="w-full sm:w-auto px-10 py-4 text-lg border-glow-blue group">
+              <Button variant="primary" className="w-full sm:w-auto px-8 py-3 text-base border-glow-blue group">
                 Join the Mission
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" className="w-full sm:w-auto px-10 py-4 text-lg">
+              <Button variant="outline" className="w-full sm:w-auto px-8 py-3 text-base">
                 View Curriculum
               </Button>
             </div>
