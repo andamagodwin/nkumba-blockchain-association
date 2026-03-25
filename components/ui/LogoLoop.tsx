@@ -419,6 +419,15 @@ export const LogoLoop = React.memo<LogoLoopProps>(
       [copyCount, logos, renderLogoItem, isVertical]
     );
 
+    const maskStyle = useMemo(() => {
+      if (!fadeOut) return {};
+      const direction = isVertical ? 'to bottom' : 'to right';
+      return {
+        maskImage: `linear-gradient(${direction}, transparent, black 15%, black 85%, transparent)`,
+        WebkitMaskImage: `linear-gradient(${direction}, transparent, black 15%, black 85%, transparent)`
+      };
+    }, [fadeOut, isVertical]);
+
     const containerStyle = useMemo(
       (): React.CSSProperties => ({
         width: isVertical
@@ -427,56 +436,14 @@ export const LogoLoop = React.memo<LogoLoopProps>(
             : toCssLength(width)
           : (toCssLength(width) ?? '100%'),
         ...cssVariables,
+        ...maskStyle,
         ...style
       }),
-      [width, cssVariables, style, isVertical]
+      [width, cssVariables, style, isVertical, maskStyle]
     );
 
     return (
       <div ref={containerRef} className={rootClasses} style={containerStyle} role="region" aria-label={ariaLabel}>
-        {fadeOut && (
-          <>
-            {isVertical ? (
-              <>
-                <div
-                  aria-hidden
-                  className={cx(
-                    'pointer-events-none absolute inset-x-0 top-0 z-10',
-                    'h-[clamp(24px,8%,120px)]',
-                    'bg-[linear-gradient(to_bottom,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]'
-                  )}
-                />
-                <div
-                  aria-hidden
-                  className={cx(
-                    'pointer-events-none absolute inset-x-0 bottom-0 z-10',
-                    'h-[clamp(24px,8%,120px)]',
-                    'bg-[linear-gradient(to_top,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]'
-                  )}
-                />
-              </>
-            ) : (
-              <>
-                <div
-                  aria-hidden
-                  className={cx(
-                    'pointer-events-none absolute inset-y-0 left-0 z-10',
-                    'w-[clamp(24px,8%,120px)]',
-                    'bg-[linear-gradient(to_right,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]'
-                  )}
-                />
-                <div
-                  aria-hidden
-                  className={cx(
-                    'pointer-events-none absolute inset-y-0 right-0 z-10',
-                    'w-[clamp(24px,8%,120px)]',
-                    'bg-[linear-gradient(to_left,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]'
-                  )}
-                />
-              </>
-            )}
-          </>
-        )}
 
         <div
           className={cx(

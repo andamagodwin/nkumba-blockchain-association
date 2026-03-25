@@ -77,33 +77,33 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero Visual Mockup */}
-          <div className="mt-20 relative px-4">
-            <div className="max-w-5xl mx-auto glass p-2 border-white/5 rounded-[2.5rem] bg-slate-900/20">
-              <div className="w-full aspect-[16/9] rounded-[2rem] bg-slate-950 overflow-hidden relative flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-nkumba-blue/10 to-transparent" />
-                <div className="w-full max-w-4xl mx-auto py-8">
-                  <h4 className="text-white/60 font-bold mb-8 text-center uppercase tracking-[0.2em] text-[10px]">What we will learn</h4>
-                  <LogoLoop
-                    speed={30}
-                    direction="left"
-                    logoHeight={64}
-                    gap={20}
-                    fadeOut
-                    fadeOutColor="transparent"
-                    logos={[
-                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiPolygon className="text-2xl" style={{ color: '#8247E5' }} /> <span className="font-bold text-white/90 text-sm">Polygon</span></div>, title: "Polygon" },
-                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiSolidity className="text-2xl" style={{ color: '#ffffff' }} /> <span className="font-bold text-white/90 text-sm">Solidity</span></div>, title: "Solidity" },
-                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiEthereum className="text-2xl" style={{ color: '#3C3C3D' }} /> <span className="font-bold text-white/90 text-sm">Hardhat</span></div>, title: "Hardhat" },
-                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiEthereum className="text-2xl" style={{ color: '#E2761B' }} /> <span className="font-bold text-white/90 text-sm">MetaMask</span></div>, title: "MetaMask" },
-                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiReact className="text-2xl" style={{ color: '#61DAFB' }} /> <span className="font-bold text-white/90 text-sm">React + Vite</span></div>, title: "Frontend" },
-                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiNextdotjs className="text-2xl" style={{ color: '#ffffff' }} /> <span className="font-bold text-white/90 text-sm">Next.js</span></div>, title: "Next.js" },
-                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiNodedotjs className="text-2xl" style={{ color: '#339933' }} /> <span className="font-bold text-white/90 text-sm">Node.js</span></div>, title: "Backend" },
-                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiIpfs className="text-2xl" style={{ color: '#65C2CB' }} /> <span className="font-bold text-white/90 text-sm">IPFS + Pinata</span></div>, title: "Storage" },
-                    ]}
-                  />
-                </div>
-              </div>
+          {/* What We Learn Section */}
+          <div className="mt-64 max-w-full relative z-10 px-4">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">What we will explore</h2>
+            </div>
+            
+            <div className="relative py-24 overflow-hidden">
+               <LogoLoop
+                 speed={40}
+                 direction="left"
+                 logoHeight={64}
+                 gap={64}
+                 fadeOut={true}
+                 fadeOutColor="#020617"
+                  logos={[
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiPolygon className="text-3xl" style={{ color: '#8247E5' }} /> <span className="font-bold text-white/90 text-xl font-mono">Polygon</span></div>, title: "Polygon" },
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiSolidity className="text-3xl" style={{ color: '#FFFFFF' }} /> <span className="font-bold text-white/90 text-xl font-mono">Solidity</span></div>, title: "Solidity" },
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiEthereum className="text-3xl" style={{ color: '#3C3C3D' }} /> <span className="font-bold text-white/90 text-xl font-mono">Hardhat</span></div>, title: "Hardhat" },
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiEthereum className="text-3xl" style={{ color: '#E2761B' }} /> <span className="font-bold text-white/90 text-xl font-mono">MetaMask</span></div>, title: "MetaMask" },
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiReact className="text-3xl" style={{ color: '#61DAFB' }} /> <span className="font-bold text-white/90 text-xl font-mono">React + Vite</span></div>, title: "Frontend" },
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiNextdotjs className="text-3xl" style={{ color: '#FFFFFF' }} /> <span className="font-bold text-white/90 text-xl font-mono">Next.js</span></div>, title: "Next.js" },
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiEthereum className="text-3xl" style={{ color: '#627EEA' }} /> <span className="font-bold text-white/90 text-xl font-mono">Ethers.js</span></div>, title: "Web3 Lib" },
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiNodedotjs className="text-3xl" style={{ color: '#339933' }} /> <span className="font-bold text-white/90 text-xl font-mono">Node.js</span></div>, title: "Backend" },
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiExpress className="text-3xl" style={{ color: '#FFFFFF' }} /> <span className="font-bold text-white/90 text-xl font-mono">Express</span></div>, title: "Express" },
+                    { node: <div className="flex items-center gap-4 px-8 py-5 glass bg-white/[0.02] border-white/5 rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiIpfs className="text-3xl" style={{ color: '#65C2CB' }} /> <span className="font-bold text-white/90 text-xl font-mono">IPFS + Pinata</span></div>, title: "Storage" },
+                  ]}
+               />
             </div>
           </div>
         </Section>
