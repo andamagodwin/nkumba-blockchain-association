@@ -19,7 +19,7 @@
   --color-nkumba-blue: var(--nkumba-blue);
   --color-nkumba-yellow: var(--nkumba-yellow);
   
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
