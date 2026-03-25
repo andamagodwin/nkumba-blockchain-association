@@ -3,6 +3,7 @@ import { Navbar } from "@/components/ui/Navbar";
 import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
+import DarkVeil from "@/components/ui/DarkVeil";
 import { 
   Flash, 
   Code, 
@@ -21,7 +22,17 @@ export default function Home() {
 
       <Navbar />
 
-      <main>
+      <main className="relative">
+        {/* Floating Lines Background */}
+        <div className="absolute top-0 left-0 w-full h-[800px] z-0 pointer-events-none opacity-40">
+          <DarkVeil 
+            speed={0.3}
+            hueShift={200} // Adjusting hue to match Nkumba Blue/Yellow better if needed
+            noiseIntensity={0.02}
+            scanlineIntensity={0.1}
+          />
+        </div>
+
         {/* Hero Section */}
         <Section className="pt-40 pb-32">
           <div className="flex flex-col items-center text-center gap-8 max-w-4xl mx-auto">
