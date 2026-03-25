@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "@/components/ui/Navbar";
+import PillNav from "@/components/ui/PillNav";
 import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
@@ -32,7 +32,20 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-nkumba-blue opacity-10 blur-[120px] rounded-full" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-nkumba-yellow opacity-5 blur-[120px] rounded-full" />
 
-      <Navbar />
+      <PillNav 
+        logo="/logo.svg"
+        logoAlt="Nkumba Blockchain Logo"
+        items={[
+          { label: 'Home', href: '#' },
+          { label: 'About', href: '#about' },
+          { label: 'Learning', href: '#learning' },
+          { label: 'Sessions', href: '#sessions' }
+        ]}
+        baseColor="#1D3E93"
+        pillColor="#020617"
+        pillTextColor="#F8FAFC"
+        hoveredPillTextColor="#F8FAFC"
+      />
 
       <main className="relative">
         <div className="absolute top-0 left-0 w-full h-[800px] z-0 pointer-events-none">

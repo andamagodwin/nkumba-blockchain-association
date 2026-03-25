@@ -34,6 +34,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
+
 export const metadata: Metadata = {
   title: "Nkumba University Blockchain Association",
   description: "Empowering the next generation of blockchain developers and innovators at Nkumba University.",
@@ -49,7 +51,11 @@ export default function RootLayout({
       lang="en"
       className={`${satoshi.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+      </body>
     </html>
   );
 }
