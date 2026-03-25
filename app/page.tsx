@@ -3,7 +3,7 @@ import { Navbar } from "@/components/ui/Navbar";
 import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
-import DarkVeil from "@/components/ui/DarkVeil";
+import Aurora from "@/components/ui/Aurora";
 import { 
   Flash, 
   Code, 
@@ -35,30 +35,23 @@ export default function Home() {
       <Navbar />
 
       <main className="relative">
-        {/* Floating Lines Background */}
-        <div className="absolute top-0 left-0 w-full h-[800px] z-0 pointer-events-none opacity-40">
-          <DarkVeil 
-            speed={0.3}
-            hueShift={200} // Adjusting hue to match Nkumba Blue/Yellow better if needed
-            noiseIntensity={0.02}
-            scanlineIntensity={0.1}
+        <div className="absolute top-0 left-0 w-full h-[800px] z-0 pointer-events-none">
+          <Aurora
+            colorStops={["#1D3E93", "#F2ED00", "#1D3E93"]}
+            blend={0.5}
+            amplitude={1.0}
+            speed={0.5}
           />
         </div>
 
         {/* Hero Section */}
         <Section className="pt-40 pb-32">
           <div className="flex flex-col items-center text-center gap-8 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-nkumba-blue/20 text-sm font-medium text-nkumba-blue animate-fade-in">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nkumba-blue opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-nkumba-blue"></span>
-              </span>
-              Empowering the Next Generation of Web3 Builders
-            </div>
+
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
               Innovation Meets <br />
-              <span className="bg-gradient-to-r from-nkumba-blue to-nkumba-yellow bg-clip-text text-transparent">Decentralization</span>
+              <span className="text-nkumba-yellow">Decentralization</span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
@@ -80,10 +73,10 @@ export default function Home() {
           {/* What We Learn Section */}
           <div className="mt-64 max-w-full relative z-10 px-4">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">What we will explore</h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">What we will <span className="text-nkumba-yellow">explore</span></h2>
             </div>
             
-            <div className="relative py-24 overflow-hidden">
+            <div className="relative py-8 overflow-hidden">
                <LogoLoop
                  speed={40}
                  direction="left"
@@ -112,7 +105,7 @@ export default function Home() {
         <Section id="learning" className="bg-slate-950/30">
           <div className="text-center mb-16">
             <h2 className="text-nkumba-blue font-bold uppercase tracking-wider text-sm mb-4">Core Pillars</h2>
-            <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">What We Learn & Build</h3>
+            <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">What We Learn & <span className="text-nkumba-yellow">Build</span></h3>
             <p className="text-slate-400 max-w-2xl mx-auto">
               Our curriculum is designed to take you from blockchain basics to building your own decentralized applications.
             </p>
@@ -157,7 +150,7 @@ export default function Home() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-nkumba-yellow/10 blur-3xl -mr-32 -mt-32 rounded-full" />
             <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
               <div className="max-w-xl">
-                <h3 className="text-4xl font-bold text-white mb-6">Every Friday at Nkumba</h3>
+                <h3 className="text-4xl font-bold text-white mb-6">Every <span className="text-nkumba-yellow">Friday</span> at Nkumba</h3>
                 <p className="text-slate-300 text-lg mb-8 leading-relaxed">
                   We gather every Friday at the Nkumba University campus to discuss the latest in blockchain, 
                   work on projects, and host guest speakers from the industry.
