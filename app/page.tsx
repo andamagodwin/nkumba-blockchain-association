@@ -58,7 +58,7 @@ export default function Home() {
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
               Innovation Meets <br />
-              <span className="bg-gradient-to-r from-nkumba-blue to-cyan-400 bg-clip-text text-transparent">Decentralization</span>
+              <span className="bg-gradient-to-r from-nkumba-blue to-nkumba-yellow bg-clip-text text-transparent">Decentralization</span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
@@ -121,7 +121,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <GlassCard glowColor="blue">
               <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
-                <Code size="24" color="#3691ad" variant="Bulk" />
+                <Code size="24" color="#1D3E93" variant="Bulk" />
               </div>
               <h4 className="text-xl font-bold text-white mb-3">Web3 Development</h4>
               <p className="text-slate-400 text-sm leading-relaxed">
@@ -131,7 +131,7 @@ export default function Home() {
 
             <GlassCard glowColor="yellow">
               <div className="w-12 h-12 rounded-xl bg-nkumba-yellow/10 flex items-center justify-center mb-6 border border-nkumba-yellow/20">
-                <SecuritySafe size="24" color="#fcee23" variant="Bulk" />
+                <SecuritySafe size="24" color="#F2ED00" variant="Bulk" />
               </div>
               <h4 className="text-xl font-bold text-white mb-3">Smart Contracts</h4>
               <p className="text-slate-400 text-sm leading-relaxed">
@@ -141,7 +141,7 @@ export default function Home() {
 
             <GlassCard glowColor="blue">
               <div className="w-12 h-12 rounded-xl bg-nkumba-blue/10 flex items-center justify-center mb-6 border border-nkumba-blue/20">
-                <MoneySend size="24" color="#3691ad" variant="Bulk" />
+                <MoneySend size="24" color="#1D3E93" variant="Bulk" />
               </div>
               <h4 className="text-xl font-bold text-white mb-3">DeFi & Tokenomics</h4>
               <p className="text-slate-400 text-sm leading-relaxed">
@@ -170,7 +170,7 @@ export default function Home() {
                     "Free resources for members"
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-slate-300">
-                      <TickCircle size="20" color="#3691ad" variant="Bold" />
+                      <TickCircle size="20" color="#1D3E93" variant="Bold" />
                       {item}
                     </li>
                   ))}

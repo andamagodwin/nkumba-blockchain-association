@@ -4,10 +4,10 @@
   --background: #020617; /* Slate-950 for a deep dark look */
   --foreground: #f8fafc;
   
-  --nkumba-blue: #3691ad;
-  --nkumba-yellow: #fcee23;
-  --nkumba-blue-glow: rgba(54, 145, 173, 0.3);
-  --nkumba-yellow-glow: rgba(252, 238, 35, 0.2);
+  --nkumba-blue: #1D3E93;
+  --nkumba-yellow: #F2ED00;
+  --nkumba-blue-glow: rgba(29, 62, 147, 0.3);
+  --nkumba-yellow-glow: rgba(242, 237, 0, 0.2);
   
   --glass-bg: rgba(15, 23, 42, 0.6);
   --glass-border: rgba(255, 255, 255, 0.08);
@@ -44,7 +44,7 @@ body {
   }
 
   .bg-gradient-nkumba {
-    background: linear-gradient(135deg, var(--nkumba-blue) 0%, #1e40af 100%);
+    background: linear-gradient(135deg, var(--nkumba-blue) 0%, #173277 100%);
   }
 
   .border-glow-blue {
