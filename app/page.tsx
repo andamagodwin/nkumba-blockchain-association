@@ -12,6 +12,18 @@ import {
   TickCircle,
   ArrowRight
 } from "iconsax-react";
+import { 
+  SiPolygon, 
+  SiSolidity, 
+  SiEthereum, 
+  SiReact, 
+  SiNextdotjs, 
+  SiNodedotjs, 
+  SiIpfs, 
+  SiVite,
+  SiExpress
+} from "react-icons/si";
+import LogoLoop from "@/components/ui/LogoLoop";
 
 export default function Home() {
   return (
@@ -70,20 +82,26 @@ export default function Home() {
             <div className="max-w-5xl mx-auto glass p-2 border-white/5 rounded-[2.5rem] bg-slate-900/20">
               <div className="w-full aspect-[16/9] rounded-[2rem] bg-slate-950 overflow-hidden relative flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-nkumba-blue/10 to-transparent" />
-                <div className="relative group cursor-pointer transition-transform duration-500 hover:scale-[1.02]">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-nkumba-blue to-nkumba-yellow rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                  <div className="relative glass p-8 border-white/10">
-                    <div className="flex items-center gap-6">
-                      <div className="w-16 h-16 rounded-full bg-nkumba-blue/20 flex items-center justify-center">
-                        <Flash size="32" color="#3691ad" variant="Bold" />
-                      </div>
-                      <div className="text-left">
-                        <div className="text-xs uppercase tracking-widest text-nkumba-blue font-bold">Friday Sessions</div>
-                        <div className="text-2xl font-bold text-white">Blockchain Workshops</div>
-                        <div className="text-slate-400">Nkumba University Main Campus • 2:00 PM</div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="w-full max-w-4xl mx-auto py-8">
+                  <h4 className="text-white/60 font-bold mb-8 text-center uppercase tracking-[0.2em] text-[10px]">What we will learn</h4>
+                  <LogoLoop
+                    speed={30}
+                    direction="left"
+                    logoHeight={64}
+                    gap={20}
+                    fadeOut
+                    fadeOutColor="transparent"
+                    logos={[
+                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiPolygon className="text-2xl" style={{ color: '#8247E5' }} /> <span className="font-bold text-white/90 text-sm">Polygon</span></div>, title: "Polygon" },
+                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiSolidity className="text-2xl" style={{ color: '#ffffff' }} /> <span className="font-bold text-white/90 text-sm">Solidity</span></div>, title: "Solidity" },
+                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiEthereum className="text-2xl" style={{ color: '#3C3C3D' }} /> <span className="font-bold text-white/90 text-sm">Hardhat</span></div>, title: "Hardhat" },
+                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiEthereum className="text-2xl" style={{ color: '#E2761B' }} /> <span className="font-bold text-white/90 text-sm">MetaMask</span></div>, title: "MetaMask" },
+                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiReact className="text-2xl" style={{ color: '#61DAFB' }} /> <span className="font-bold text-white/90 text-sm">React + Vite</span></div>, title: "Frontend" },
+                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiNextdotjs className="text-2xl" style={{ color: '#ffffff' }} /> <span className="font-bold text-white/90 text-sm">Next.js</span></div>, title: "Next.js" },
+                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiNodedotjs className="text-2xl" style={{ color: '#339933' }} /> <span className="font-bold text-white/90 text-sm">Node.js</span></div>, title: "Backend" },
+                      { node: <div className="flex items-center gap-3 px-6 py-4 glass bg-white/[0.02] border-white/5 rounded-xl transition-all duration-300 whitespace-nowrap"><SiIpfs className="text-2xl" style={{ color: '#65C2CB' }} /> <span className="font-bold text-white/90 text-sm">IPFS + Pinata</span></div>, title: "Storage" },
+                    ]}
+                  />
                 </div>
               </div>
             </div>
