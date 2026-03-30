@@ -95,10 +95,12 @@ void main() {
   vec3 rampColor;
   COLOR_RAMP(colors, uv.x, rampColor);
   
-  float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
+  float aspect = uResolution.x / uResolution.y;
+  float noiseX = uv.x * aspect * 3.0; // Aspect-corrected noise
+  float height = snoise(vec2(noiseX + uTime * 0.1, uTime * 0.15)) * 0.5 * uAmplitude;
   height = exp(height);
-  height = (uv.y * 2.0 - height + 0.2);
-  float intensity = 0.6 * height;
+  height = (uv.y * 2.5 - height + 0.3); // Slightly taller wave distribution
+  float intensity = 0.5 * height;
   
   float midPoint = 0.20;
   float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);

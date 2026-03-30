@@ -165,11 +165,10 @@ const Navbar: React.FC<NavbarProps> = ({
               {item.label}
             </Link>
           ))}
-          <div className="h-px w-16 bg-white/10 my-6" />
           <Link 
             href={ctaHref}
             onClick={(e) => handleNavClick(e, ctaHref)}
-            className="flex items-center gap-3 text-lg font-bold text-nkumba-yellow hover:scale-110 transition-all duration-300 bg-nkumba-yellow/10 px-8 py-3 rounded-full border border-nkumba-yellow/20"
+            className="mt-8 flex items-center gap-3 text-lg font-bold text-slate-950 hover:scale-110 transition-all duration-300 bg-nkumba-yellow px-10 py-4 rounded-full shadow-[0_0_20px_rgba(242,237,0,0.2)]"
           >
             {ctaLabel} <ArrowRight size="20" />
           </Link>
