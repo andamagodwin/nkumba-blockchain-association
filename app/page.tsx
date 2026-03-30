@@ -44,7 +44,7 @@ export default function Home() {
       />
 
       <main className="relative">
-        <div className="absolute top-0 left-0 w-full h-[800px] z-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-screen z-0 pointer-events-none">
           <Aurora
             colorStops={["#1D3E93", "#F2ED00", "#1D3E93"]}
             blend={0.5}

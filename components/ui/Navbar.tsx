@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useLenis } from 'lenis/react';
 import { gsap } from 'gsap';
 import { ArrowRight } from 'iconsax-react';
 import { HiBars3BottomRight, HiXMark } from 'react-icons/hi2';
@@ -29,6 +30,27 @@ const Navbar: React.FC<NavbarProps> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const lenis = useLenis();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      setIsMenuOpen(false);
+      
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (href === '#') {
+        lenis?.scrollTo(0, { duration: 1.5 });
+      } else if (targetElement) {
+        lenis?.scrollTo(targetElement, { 
+          duration: 1.5,
+          offset: -80, // Accounts for navbar height
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
+      }
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,6 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({
               <Link
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-[12px] font-semibold text-white/90 hover:text-nkumba-yellow transition-colors duration-300 tracking-wide uppercase"
               >
                 {item.label}
@@ -132,7 +155,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <Link
               key={item.label}
               href={item.href}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="text-3xl font-bold text-white hover:text-nkumba-yellow transition-colors tracking-tight"
             >
               {item.label}
