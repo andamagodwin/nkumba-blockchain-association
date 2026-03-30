@@ -4,22 +4,22 @@ import BorderGlow from "@/components/ui/BorderGlow";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import Aurora from "@/components/ui/Aurora";
-import { 
-  Flash, 
-  Code, 
-  SecuritySafe, 
-  MoneySend, 
+import {
+  Flash,
+  Code,
+  SecuritySafe,
+  MoneySend,
   TickCircle,
   ArrowRight
 } from "iconsax-react";
-import { 
-  SiPolygon, 
-  SiSolidity, 
-  SiEthereum, 
-  SiReact, 
-  SiNextdotjs, 
-  SiNodedotjs, 
-  SiIpfs, 
+import {
+  SiPolygon,
+  SiSolidity,
+  SiEthereum,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiIpfs,
   SiVite,
   SiExpress
 } from "react-icons/si";
@@ -32,7 +32,7 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-nkumba-blue opacity-10 blur-[120px] rounded-full" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-nkumba-yellow opacity-5 blur-[120px] rounded-full" />
 
-      <Navbar 
+      <Navbar
         items={[
           { label: 'Home', href: '#' },
           { label: 'About', href: '#about' },
@@ -59,13 +59,13 @@ export default function Home() {
 
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-              Innovation Meets <br />
-              <span className="text-nkumba-yellow">Decentralization</span>
+              A Community for <br />
+              <span className="text-nkumba-yellow">AI & Blockchain Innovators</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
-              Join the Nkumba Blockchain Club to learn, build, and innovate. 
-              Discover the future of finance, technology, and identity every Friday.
+            <p className="text-lg md:text-xl text-white max-w-2xl leading-relaxed opacity-95">
+              Join the Nkumba Blockchain Club to learn, build, and innovate at the intersection of AI and Web3.
+              Discover the future of autonomous finance and digital identity every Friday.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
@@ -84,31 +84,65 @@ export default function Home() {
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">What we will <span className="text-nkumba-yellow">explore</span></h2>
             </div>
-            
+
             <div className="relative py-8 overflow-hidden">
-               <LogoLoop
-                 speed={40}
-                 direction="left"
-                 logoHeight={64}
-                 gap={32}
-                 fadeOut={true}
-                 fadeOutColor="#020617"
-                  logos={[
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiPolygon className="text-xl md:text-3xl" style={{ color: '#8247E5' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Polygon</span></div>, title: "Polygon" },
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiSolidity className="text-xl md:text-3xl" style={{ color: '#FFFFFF' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Solidity</span></div>, title: "Solidity" },
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiEthereum className="text-xl md:text-3xl" style={{ color: '#3C3C3D' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Hardhat</span></div>, title: "Hardhat" },
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiEthereum className="text-xl md:text-3xl" style={{ color: '#E2761B' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">MetaMask</span></div>, title: "MetaMask" },
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiReact className="text-xl md:text-3xl" style={{ color: '#61DAFB' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">React + Vite</span></div>, title: "Frontend" },
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiNextdotjs className="text-xl md:text-3xl" style={{ color: '#FFFFFF' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Next.js</span></div>, title: "Next.js" },
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiEthereum className="text-xl md:text-3xl" style={{ color: '#627EEA' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Ethers.js</span></div>, title: "Web3 Lib" },
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiNodedotjs className="text-xl md:text-3xl" style={{ color: '#339933' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Node.js</span></div>, title: "Backend" },
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiExpress className="text-xl md:text-3xl" style={{ color: '#FFFFFF' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Express</span></div>, title: "Express" },
-                    { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiIpfs className="text-xl md:text-3xl" style={{ color: '#65C2CB' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">IPFS + Pinata</span></div>, title: "Storage" },
-                  ]}
-               />
+              <LogoLoop
+                speed={40}
+                direction="left"
+                logoHeight={64}
+                gap={32}
+                fadeOut={true}
+                fadeOutColor="#020617"
+                logos={[
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiPolygon className="text-xl md:text-3xl" style={{ color: '#8247E5' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Polygon</span></div>, title: "Polygon" },
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiSolidity className="text-xl md:text-3xl" style={{ color: '#FFFFFF' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Solidity</span></div>, title: "Solidity" },
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiEthereum className="text-xl md:text-3xl" style={{ color: '#3C3C3D' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Hardhat</span></div>, title: "Hardhat" },
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiEthereum className="text-xl md:text-3xl" style={{ color: '#E2761B' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">MetaMask</span></div>, title: "MetaMask" },
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiReact className="text-xl md:text-3xl" style={{ color: '#61DAFB' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">React + Vite</span></div>, title: "Frontend" },
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiNextdotjs className="text-xl md:text-3xl" style={{ color: '#FFFFFF' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Next.js</span></div>, title: "Next.js" },
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiEthereum className="text-xl md:text-3xl" style={{ color: '#627EEA' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Ethers.js</span></div>, title: "Web3 Lib" },
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiNodedotjs className="text-xl md:text-3xl" style={{ color: '#339933' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Node.js</span></div>, title: "Backend" },
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiExpress className="text-xl md:text-3xl" style={{ color: '#FFFFFF' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">Express</span></div>, title: "Express" },
+                  { node: <div className="flex items-center gap-2 md:gap-4 px-4 py-3 md:px-8 md:py-5 glass bg-white/[0.02] border-white/5 rounded-xl md:rounded-2xl group hover:bg-nkumba-blue/5 transition-all duration-500 whitespace-nowrap"><SiIpfs className="text-xl md:text-3xl" style={{ color: '#65C2CB' }} /> <span className="font-bold text-white/90 text-sm md:text-xl font-mono">IPFS + Pinata</span></div>, title: "Storage" },
+                ]}
+              />
             </div>
           </div>
         </Section>
+
+        {/* About Us Section */}
+        <Section id="about" className="relative z-10 w-full overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
+            {/* Text Content */}
+            <div className="flex-1 space-y-8 max-w-2xl">
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
+                About <span className="text-nkumba-yellow">Us</span>
+              </h2>
+              <div className="space-y-6">
+                <p className="text-slate-300 text-lg md:text-xl leading-relaxed">
+                  We are a vibrant community of passionate students and tech enthusiasts at Nkumba University. Our mission is to bridge the gap between theoretical knowledge and practical application in the rapidly evolving fields of <span className="text-white font-semibold">Blockchain, Web3, and Artificial Intelligence</span>.
+                </p>
+                <p className="text-slate-300 text-lg md:text-xl leading-relaxed">
+                  Through collaborative open-source projects, hands-on workshops, and insightful guest speaker sessions, we aim to equip our members with the skills necessary to innovate, build decentralized applications, and shape the future of autonomous technology.
+                </p>
+              </div>
+            </div>
+
+            {/* Illustration */}
+            <div className="flex-1 w-full flex justify-center md:justify-end">
+              <div className="relative w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] aspect-square">
+                {/* Subtle Glow Behind Image */}
+                <div className="absolute inset-[30%] bg-nkumba-yellow/5 blur-[60px] rounded-full pointer-events-none" />
+                <img 
+                  src="/Bitcoin-p2p-bro.svg" 
+                  alt="Bitcoin Peer-to-Peer Illustration" 
+                  className="relative z-10 w-full h-full object-contain drop-shadow-2xl hover:-translate-y-4 hover:scale-105 transition-all duration-700 ease-out"
+                />
+              </div>
+            </div>
+          </div>
+        </Section>
+
 
         {/* Learning/Curriculum Section */}
         <Section id="learning" className="bg-slate-950/30">
@@ -166,7 +200,7 @@ export default function Home() {
               <div className="max-w-xl">
                 <h3 className="text-4xl font-bold text-white mb-6">Every <span className="text-nkumba-yellow">Friday</span> at Nkumba</h3>
                 <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-                  We gather every Friday at the Nkumba University campus to discuss the latest in blockchain, 
+                  We gather every Friday at the Nkumba University campus to discuss the latest in blockchain,
                   work on projects, and host guest speakers from the industry.
                 </p>
                 <ul className="space-y-4 mb-8">
@@ -210,7 +244,7 @@ export default function Home() {
               Nkumba Blockchain <span className="text-nkumba-yellow">Club</span>
             </span>
           </div>
-          
+
           <div className="text-slate-500 text-sm">
             © 2026 Nkumba Blockchain Association. All rights reserved.
           </div>
