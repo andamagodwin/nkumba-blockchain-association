@@ -4,6 +4,7 @@ import BorderGlow from "@/components/ui/BorderGlow";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import Aurora from "@/components/ui/Aurora";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import {
   Flash,
   Code,
@@ -70,7 +71,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
               <Button variant="primary" className="w-full sm:w-auto px-8 py-3 text-base border-glow-blue group">
-                Join the Mission
+                Build the Future With Us
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" className="w-full sm:w-auto px-8 py-3 text-base">
@@ -193,10 +194,20 @@ export default function Home() {
         </Section>
 
         {/* Friday Sessions Section */}
-        <Section id="sessions" className="relative">
-          <div className="glass p-12 overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-nkumba-yellow/10 blur-3xl -mr-32 -mt-32 rounded-full" />
-            <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+        <section id="sessions" className="relative z-10 py-20 overflow-hidden">
+          {/* Full-bleed Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/images/sessions-bg.jpg')" }}
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-slate-950/75 backdrop-blur-[2px]" />
+          {/* Subtle ambient glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-nkumba-yellow/5 blur-[120px] rounded-full" />
+
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="max-w-xl">
                 <h3 className="text-4xl font-bold text-white mb-6">Every <span className="text-nkumba-yellow">Friday</span> at Nkumba</h3>
                 <p className="text-slate-300 text-lg mb-8 leading-relaxed">
@@ -220,7 +231,7 @@ export default function Home() {
                   Save My Seat
                 </Button>
               </div>
-              <div className="flex-1 w-full max-w-md aspect-square glass border-nkumba-yellow/20 flex items-center justify-center bg-nkumba-yellow/5">
+              <div className="flex-1 w-full max-w-md aspect-square glass flex items-center justify-center bg-white/[0.03]">
                 <div className="text-center p-8">
                   <div className="text-6xl font-black text-nkumba-yellow mb-2 tracking-tighter">FRI</div>
                   <div className="text-xl font-bold text-white uppercase tracking-widest">Sessions</div>
@@ -231,6 +242,19 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <Section id="faq" className="relative z-10">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-4">
+                Got <span className="text-nkumba-yellow">Questions?</span>
+              </h2>
+              <p className="text-slate-400 text-lg">Everything you need to know about the Nkumba Blockchain Club.</p>
+            </div>
+            <FaqAccordion />
           </div>
         </Section>
       </main>
