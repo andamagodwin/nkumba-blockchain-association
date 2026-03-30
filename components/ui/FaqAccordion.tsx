@@ -40,10 +40,10 @@ export function FaqAccordion() {
         return (
           <div
             key={i}
-            className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+            className={`rounded-2xl transition-all duration-300 overflow-hidden ${
               isOpen
-                ? 'border-nkumba-yellow/30 bg-nkumba-yellow/[0.04]'
-                : 'border-white/[0.06] bg-white/[0.02] hover:border-white/10 hover:bg-white/[0.04]'
+                ? 'bg-nkumba-yellow/[0.04]'
+                : 'bg-white/[0.02] hover:bg-white/[0.04]'
             }`}
           >
             <button

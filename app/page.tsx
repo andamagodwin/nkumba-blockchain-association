@@ -231,15 +231,13 @@ export default function Home() {
                   Save My Seat
                 </Button>
               </div>
-              <div className="flex-1 w-full max-w-md aspect-square glass flex items-center justify-center bg-white/[0.03]">
-                <div className="text-center p-8">
-                  <div className="text-6xl font-black text-nkumba-yellow mb-2 tracking-tighter">FRI</div>
-                  <div className="text-xl font-bold text-white uppercase tracking-widest">Sessions</div>
-                  <div className="h-px w-24 bg-white/10 mx-auto my-6" />
-                  <div className="text-slate-400 text-sm mb-4">Starting at</div>
-                  <div className="text-3xl font-bold text-white mb-1">2:00 PM</div>
-                  <div className="text-nkumba-blue text-sm font-medium">Nkumba Main Campus</div>
-                </div>
+              <div className="flex-1 w-full flex flex-col items-center md:items-end text-center md:text-right gap-3">
+                <div className="text-7xl font-black text-nkumba-yellow tracking-tighter">FRI</div>
+                <div className="text-2xl font-bold text-white uppercase tracking-widest">Sessions</div>
+                <div className="h-px w-16 bg-white/10 my-2" />
+                <div className="text-slate-400 text-sm">Starting at</div>
+                <div className="text-4xl font-bold text-white">2:00 PM</div>
+                <div className="text-nkumba-yellow/80 text-sm font-medium tracking-wide">Nkumba Main Campus</div>
               </div>
             </div>
           </div>
