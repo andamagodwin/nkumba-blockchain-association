@@ -128,6 +128,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-2">
             <Link href={ctaHref} className="hidden sm:block">
               <button 
+                onClick={(e) => handleNavClick(e as any, ctaHref)}
                 className="text-[11px] font-bold uppercase tracking-wider py-2 px-5 rounded-full bg-nkumba-yellow text-slate-950 hover:scale-105 active:scale-95 transition-all duration-200 shadow-[0_0_15px_rgba(242,237,0,0.15)] cursor-pointer"
               >
                 {ctaLabel}
@@ -148,7 +149,7 @@ const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Menu Overlay */}
       <div
         ref={menuRef}
-        className="fixed inset-0 z-[90] md:hidden bg-slate-950/98 backdrop-blur-2xl invisible opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-[90] md:hidden bg-slate-950/98 backdrop-blur-2xl invisible opacity-0 ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8 p-12">
           {items.map((item, index) => (
@@ -164,7 +165,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="h-px w-12 bg-white/10 my-4" />
           <Link 
             href={ctaHref}
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(e) => handleNavClick(e, ctaHref)}
             className="flex items-center gap-2 text-xl font-bold text-nkumba-yellow hover:gap-4 transition-all"
           >
             {ctaLabel} <ArrowRight size="24" />
