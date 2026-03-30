@@ -151,24 +151,27 @@ const Navbar: React.FC<NavbarProps> = ({
         ref={menuRef}
         className={`fixed inset-0 z-[90] md:hidden bg-slate-950/98 backdrop-blur-2xl invisible opacity-0 ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8 p-12">
+        <div className="flex flex-col items-center justify-center h-full gap-6 p-12">
           {items.map((item, index) => (
             <Link
               key={item.label}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-3xl font-bold text-white hover:text-nkumba-yellow transition-colors tracking-tight"
+              className="group flex items-center gap-4 text-2xl font-bold text-white hover:text-nkumba-yellow transition-all duration-300 tracking-tight"
             >
+              <span className="text-[10px] font-mono text-nkumba-yellow opacity-50 group-hover:opacity-100 transition-opacity">
+                0{index + 1}
+              </span>
               {item.label}
             </Link>
           ))}
-          <div className="h-px w-12 bg-white/10 my-4" />
+          <div className="h-px w-16 bg-white/10 my-6" />
           <Link 
             href={ctaHref}
             onClick={(e) => handleNavClick(e, ctaHref)}
-            className="flex items-center gap-2 text-xl font-bold text-nkumba-yellow hover:gap-4 transition-all"
+            className="flex items-center gap-3 text-lg font-bold text-nkumba-yellow hover:scale-110 transition-all duration-300 bg-nkumba-yellow/10 px-8 py-3 rounded-full border border-nkumba-yellow/20"
           >
-            {ctaLabel} <ArrowRight size="24" />
+            {ctaLabel} <ArrowRight size="20" />
           </Link>
         </div>
       </div>
