@@ -92,7 +92,7 @@ const Navbar: React.FC<NavbarProps> = ({
           className={`relative flex items-center justify-between w-full max-w-5xl px-4 md:px-6 py-2 rounded-full transition-all duration-500 ${
             isScrolled 
               ? 'bg-slate-950/80 backdrop-blur-xl shadow-2xl' 
-              : 'bg-white/5 backdrop-blur-sm'
+              : 'bg-white/[0.01] backdrop-blur-[2px]'
           }`}
         >
           {/* Logo */}
@@ -117,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-[12px] font-semibold text-white/90 hover:text-nkumba-yellow transition-colors duration-300 tracking-wide uppercase"
+                className="text-[13px] font-medium text-white/90 hover:text-nkumba-yellow transition-colors duration-300 tracking-wide capitalize"
               >
                 {item.label}
               </Link>
