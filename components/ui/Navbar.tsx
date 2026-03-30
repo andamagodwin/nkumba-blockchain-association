@@ -1,31 +1,155 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { gsap } from 'gsap';
+import { ArrowRight } from 'iconsax-react';
+import { HiBars3BottomRight, HiXMark } from 'react-icons/hi2';
 import { Button } from './Button';
 
-export const Navbar = () => {
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
-      <div className="glass w-full max-w-7xl px-8 py-4 flex items-center justify-between border-white/5 bg-slate-900/40">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-nkumba flex items-center justify-center border border-white/20">
-            <span className="text-xl font-bold text-white">N</span>
-          </div>
-          <span className="text-xl font-bold tracking-tight text-white hidden sm:block">
-            <span className="text-nkumba-blue">Nkumba</span> Blockchain <span className="text-nkumba-yellow">Club</span>
-          </span>
-        </div>
-        
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-sm font-medium text-slate-300 hover:text-nkumba-blue transition-colors">About</a>
-          <a href="#learning" className="text-sm font-medium text-slate-300 hover:text-nkumba-blue transition-colors">Learning</a>
-          <a href="#sessions" className="text-sm font-medium text-slate-300 hover:text-nkumba-blue transition-colors">Sessions</a>
-        </div>
+export type NavItem = {
+  label: string;
+  href: string;
+};
 
-        <div>
-          <Button variant="primary" className="py-2 text-sm">
-            Join Now
-          </Button>
+export interface NavbarProps {
+  logo?: string;
+  items: NavItem[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  logo = '/nkumba-logo.jpeg',
+  items,
+  ctaLabel = 'Join Now',
+  ctaHref = '#join'
+}) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      gsap.to(menuRef.current, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.4,
+        ease: 'power3.out'
+      });
+    } else {
+      document.body.style.overflow = 'unset';
+      gsap.to(menuRef.current, {
+        autoAlpha: 0,
+        y: -20,
+        duration: 0.3,
+        ease: 'power3.in'
+      });
+    }
+  }, [isMenuOpen]);
+
+  return (
+    <>
+      <nav
+        ref={navRef}
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-3 px-4 md:px-12 flex justify-center items-center ${
+          isScrolled ? 'pt-2' : 'pt-4'
+        }`}
+      >
+        <div 
+          className={`relative flex items-center justify-between w-full max-w-5xl px-4 md:px-6 py-2 rounded-full transition-all duration-500 ${
+            isScrolled 
+              ? 'bg-slate-950/80 backdrop-blur-xl shadow-2xl' 
+              : 'bg-white/5 backdrop-blur-sm'
+          }`}
+        >
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative w-8 h-8 md:w-9 md:h-9 overflow-hidden rounded-lg border border-white/10 group-hover:border-nkumba-yellow/50 transition-colors duration-300">
+              <img src={logo} alt="Nkumba Logo" className="w-full h-full object-cover" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[12px] md:text-sm font-bold tracking-tight text-white leading-tight">
+                Nkumba University
+              </span>
+              <span className="text-[8px] md:text-[9px] font-medium tracking-[0.2em] text-nkumba-yellow uppercase">
+                Blockchain Association
+              </span>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            {items.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-[12px] font-semibold text-white/90 hover:text-nkumba-yellow transition-colors duration-300 tracking-wide uppercase"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA & Mobile Toggle */}
+          <div className="flex items-center gap-2">
+            <Link href={ctaHref} className="hidden sm:block">
+              <button 
+                className="text-[11px] font-bold uppercase tracking-wider py-2 px-5 rounded-full bg-nkumba-yellow text-slate-950 hover:scale-105 active:scale-95 transition-all duration-200 shadow-[0_0_15px_rgba(242,237,0,0.15)] cursor-pointer"
+              >
+                {ctaLabel}
+              </button>
+            </Link>
+
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 text-white hover:text-nkumba-yellow transition-all duration-300 active:scale-90"
+              aria-label="Toggle Menu"
+            >
+              {isMenuOpen ? <HiXMark size="32" /> : <HiBars3BottomRight size="32" />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        ref={menuRef}
+        className="fixed inset-0 z-[90] md:hidden bg-slate-950/98 backdrop-blur-2xl invisible opacity-0 pointer-events-none"
+      >
+        <div className="flex flex-col items-center justify-center h-full gap-8 p-12">
+          {items.map((item, index) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="text-3xl font-bold text-white hover:text-nkumba-yellow transition-colors tracking-tight"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <div className="h-px w-12 bg-white/10 my-4" />
+          <Link 
+            href={ctaHref}
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center gap-2 text-xl font-bold text-nkumba-yellow hover:gap-4 transition-all"
+          >
+            {ctaLabel} <ArrowRight size="24" />
+          </Link>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
+
+export default Navbar;

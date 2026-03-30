@@ -1,5 +1,5 @@
 import React from "react";
-import PillNav from "@/components/ui/PillNav";
+import Navbar from "@/components/ui/Navbar";
 import BorderGlow from "@/components/ui/BorderGlow";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
@@ -32,20 +32,15 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-nkumba-blue opacity-10 blur-[120px] rounded-full" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-nkumba-yellow opacity-5 blur-[120px] rounded-full" />
 
-      <PillNav 
-        logo="/nkumba-logo.jpeg"
-        logoAlt="Nkumba Blockchain Logo"
+      <Navbar 
         items={[
           { label: 'Home', href: '#' },
           { label: 'About', href: '#about' },
           { label: 'Learning', href: '#learning' },
           { label: 'Sessions', href: '#sessions' }
         ]}
-        cta={{ label: 'Join', href: '#join' }}
-        baseColor="#1D3E93"
-        pillColor="#020617"
-        pillTextColor="#F8FAFC"
-        hoveredPillTextColor="#F8FAFC"
+        ctaLabel="Join Now"
+        ctaHref="#join"
       />
 
       <main className="relative">
