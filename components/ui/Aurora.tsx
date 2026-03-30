@@ -96,14 +96,18 @@ void main() {
   COLOR_RAMP(colors, uv.x, rampColor);
   
   float aspect = uResolution.x / uResolution.y;
-  float noiseX = uv.x * aspect * 3.0; // Aspect-corrected noise
-  float height = snoise(vec2(noiseX + uTime * 0.1, uTime * 0.15)) * 0.5 * uAmplitude;
-  height = exp(height);
-  height = (uv.y * 2.5 - height + 0.3); // Slightly taller wave distribution
-  float intensity = 0.5 * height;
+  float noiseX = uv.x * aspect * 1.8; // Lower frequency for smoother, wider waves
+  float noise1 = snoise(vec2(noiseX + uTime * 0.07, uTime * 0.1)) * 0.3;
+  float noise2 = snoise(vec2(noiseX * 0.5 + uTime * 0.05, uTime * 0.08 + 3.0)) * 0.15;
+  float height = (noise1 + noise2) * uAmplitude;
+  height = exp(height * 0.8); // Gentler exponential curve
+  height = (uv.y * 2.2 - height + 0.25);
+  float intensity = 0.45 * height;
   
-  float midPoint = 0.20;
-  float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
+  float midPoint = 0.18;
+  float blendRange = uBlend * 1.5; // Wider blend for much softer edges
+  float auroraAlpha = smoothstep(midPoint - blendRange, midPoint + blendRange, intensity);
+  auroraAlpha = auroraAlpha * auroraAlpha; // Quadratic falloff for extra-smooth fade
   
   vec3 auroraColor = intensity * rampColor;
   
