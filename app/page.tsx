@@ -29,10 +29,12 @@ import LogoLoop from "@/components/ui/LogoLoop";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-background selection:bg-nkumba-blue/30 overflow-hidden">
+    <div className="relative min-h-screen flex flex-col bg-background selection:bg-nkumba-blue/30">
       {/* Background Glows */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-nkumba-blue opacity-10 blur-[120px] rounded-full" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-nkumba-yellow opacity-5 blur-[120px] rounded-full" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-nkumba-blue opacity-10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-nkumba-yellow opacity-5 blur-[120px] rounded-full" />
+      </div>
 
       <Navbar
         items={[
@@ -70,13 +72,17 @@ export default function Home() {
               Discover the future of autonomous finance and digital identity every Friday.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-              <Button variant="primary" className="w-full sm:w-auto px-8 py-3 text-base border-glow-blue group">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
+              {/* <Button variant="primary" className="w-full sm:w-auto px-8 py-3 text-base border-glow-blue group" href="#join">
                 Build the Future With Us
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" className="w-full sm:w-auto px-8 py-3 text-base">
-                View Curriculum
+              </Button> */}
+              <Button 
+                variant="outline" 
+                className="w-full sm:w-auto px-8 py-3 text-base"
+                href="#roadmap"
+              >
+                Our roadmap
               </Button>
             </div>
           </div>
@@ -265,6 +271,76 @@ export default function Home() {
           </div>
         </Section>
 
+        {/* Roadmap Section */}
+        <Section id="roadmap" className="relative z-10 w-full overflow-hidden bg-slate-950/50">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">Curriculum <span className="text-nkumba-yellow">Roadmap</span></h2>
+              <p className="text-slate-400 mt-4 text-lg">A 7-week journey from zero to deploying a full-stack dApp.</p>
+            </div>
+
+            <div className="max-w-2xl mx-auto space-y-4">
+              {[
+                {
+                  week: "Week 1",
+                  title: "Foundations & Collaboration",
+                  color: "nkumba-blue",
+                  active: true
+                },
+                {
+                  week: "Week 2",
+                  title: "The Paradigm Shift (Web2 vs. Web3)",
+                  color: "nkumba-yellow",
+                  active: false
+                },
+                {
+                  week: "Week 3",
+                  title: "Smart Contract Logic (Solidity 101)",
+                  color: "nkumba-blue",
+                  active: false
+                },
+                {
+                  week: "Week 4",
+                  title: "Professional Tooling (Hardhat)",
+                  color: "nkumba-yellow",
+                  active: false
+                 },
+                {
+                  week: "Week 5",
+                  title: "Decentralized Storage (IPFS & Pinata)",
+                  color: "nkumba-blue",
+                  active: false
+                },
+                {
+                  week: "Week 6",
+                  title: "The Full-Stack Bridge (React + Ethers.js)",
+                  color: "nkumba-yellow",
+                  active: false
+                 },
+                {
+                  week: "Week 7",
+                  title: "Deployment & Web Hosting",
+                  color: "nkumba-blue",
+                  active: false
+                }
+              ].map((step, i) => (
+                <div key={i} className={`flex relative items-center gap-4 glass p-4 !border-transparent rounded-2xl transition-colors ${step.active ? 'bg-white/5 ring-1 ring-white/10 md:p-6' : 'bg-white/[0.01] hover:bg-white/[0.03]'}`}>
+                  {step.active && (
+                    <div className="absolute -top-3 -right-2 md:top-auto md:-left-4 md:-translate-x-full md:right-auto bg-nkumba-blue text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                      This Week
+                    </div>
+                  )}
+                  <TickCircle size={step.active ? "32" : "28"} color={step.active ? (step.color === 'nkumba-blue' ? '#3691ad' : '#fcee23') : '#334155'} variant={step.active ? "Bold" : "Linear"} className="shrink-0 transition-all duration-300" />
+                  <div className="flex flex-col">
+                    <span className={`${step.active ? 'text-' + step.color : 'text-slate-500'} font-mono text-xs sm:text-sm font-bold tracking-wider transition-colors`}>{step.week}</span>
+                    <h3 className={`text-lg sm:text-xl font-bold transition-colors ${step.active ? 'text-white' : 'text-slate-400'}`}>{step.title}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Section>
+
         {/* Friday Sessions Section */}
         <section id="sessions" className="relative z-10 py-20 overflow-hidden">
           {/* Full-bleed Background Image */}
@@ -330,8 +406,8 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/5 bg-slate-950/20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <footer className="py-6 px-6 border-t border-white/5 bg-slate-950/20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
           <div className="flex items-center gap-3">
             <img src="/nkumba-logo.jpeg" alt="Nkumba Logo" className="w-8 h-8 rounded-lg object-cover" />
             <span className="text-lg font-bold text-white">
