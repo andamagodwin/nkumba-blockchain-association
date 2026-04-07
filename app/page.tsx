@@ -22,7 +22,8 @@ import {
   SiNodedotjs,
   SiIpfs,
   SiVite,
-  SiExpress
+  SiExpress,
+  SiGithub
 } from "react-icons/si";
 import LogoLoop from "@/components/ui/LogoLoop";
 
@@ -82,8 +83,79 @@ export default function Home() {
 
           {/* What We Learn Section */}
           <div className="mt-64 max-w-full relative z-10 px-4">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">What we will <span className="text-nkumba-yellow">explore</span></h2>
+            </div>
+
+            <div className="max-w-5xl mx-auto mb-16 px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="glass p-6 !border-transparent rounded-2xl bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <div className="text-nkumba-blue text-sm font-semibold mb-2 uppercase tracking-wide">Blockchain</div>
+                  <div className="flex items-center gap-3 text-white font-medium">
+                    <SiPolygon className="text-[#8247E5] text-2xl" />
+                    Polygon Testnet
+                  </div>
+                </div>
+                <div className="glass p-6 !border-transparent rounded-2xl bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <div className="text-nkumba-blue text-sm font-semibold mb-2 uppercase tracking-wide">Lang</div>
+                  <div className="flex items-center gap-3 text-white font-medium">
+                    <SiSolidity className="text-slate-300 text-2xl" />
+                    Solidity
+                  </div>
+                </div>
+                <div className="glass p-6 !border-transparent rounded-2xl bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <div className="text-nkumba-blue text-sm font-semibold mb-2 uppercase tracking-wide">Dev Tool</div>
+                  <div className="flex items-center gap-3 text-white font-medium">
+                    <SiEthereum className="text-[#3C3C3D] text-2xl" />
+                    Hardhat
+                  </div>
+                </div>
+                <div className="glass p-6 !border-transparent rounded-2xl bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <div className="text-nkumba-blue text-sm font-semibold mb-2 uppercase tracking-wide">Wallet</div>
+                  <div className="flex items-center gap-3 text-white font-medium">
+                    <SiEthereum className="text-[#E2761B] text-2xl" />
+                    MetaMask
+                  </div>
+                </div>
+                <div className="glass p-6 !border-transparent rounded-2xl bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <div className="text-nkumba-blue text-sm font-semibold mb-2 uppercase tracking-wide">Frontend</div>
+                  <div className="flex items-center gap-3 text-white font-medium">
+                    <SiReact className="text-[#61DAFB] text-2xl" />
+                    React + Vite
+                  </div>
+                </div>
+                <div className="glass p-6 !border-transparent rounded-2xl bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <div className="text-nkumba-blue text-sm font-semibold mb-2 uppercase tracking-wide">Web3 Lib</div>
+                  <div className="flex items-center gap-3 text-white font-medium">
+                    <SiEthereum className="text-[#627EEA] text-2xl" />
+                    Ethers.js
+                  </div>
+                </div>
+                <div className="glass p-6 !border-transparent rounded-2xl bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <div className="text-nkumba-blue text-sm font-semibold mb-2 uppercase tracking-wide">Backend</div>
+                  <div className="flex items-center gap-3 text-white font-medium">
+                    <div className="flex -space-x-1">
+                      <SiNodedotjs className="text-[#339933] text-2xl relative z-10" />
+                      <SiExpress className="text-white text-2xl relative z-0" />
+                    </div>
+                    Node.js / Express
+                  </div>
+                </div>
+                <div className="glass p-6 !border-transparent rounded-2xl bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <div className="text-nkumba-blue text-sm font-semibold mb-2 uppercase tracking-wide">Storage</div>
+                  <div className="flex items-center gap-3 text-white font-medium">
+                    <SiIpfs className="text-[#65C2CB] text-2xl" />
+                    Pinata / NFT.Storage
+                  </div>
+                </div>
+                <div className="glass p-6 !border-transparent rounded-2xl bg-white/[0.01] hover:bg-white/[0.03] transition-colors md:col-span-4 lg:col-span-1 lg:col-start-2">
+                  <div className="text-nkumba-blue text-sm font-semibold mb-2 uppercase tracking-wide">Version Control</div>
+                  <div className="flex items-center gap-3 text-white font-medium">
+                    <SiGithub className="text-white text-2xl" />
+                    GitHub
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="relative py-8 overflow-hidden">
@@ -209,9 +281,9 @@ export default function Home() {
           <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="max-w-xl">
-                <h3 className="text-4xl font-bold text-white mb-6">Every <span className="text-nkumba-yellow">Friday</span> at Nkumba</h3>
+                <h3 className="text-4xl font-bold text-white mb-6">Every <span className="text-nkumba-yellow">Week</span> at Nkumba</h3>
                 <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-                  We gather every Friday at the Nkumba University campus to discuss the latest in blockchain,
+                  We gather every week at the Nkumba University campus to discuss the latest in blockchain,
                   work on projects, and host guest speakers from the industry.
                 </p>
                 <ul className="space-y-4 mb-8">
@@ -232,7 +304,7 @@ export default function Home() {
                 </Button>
               </div>
               <div className="flex-1 w-full flex flex-col items-center md:items-end text-center md:text-right gap-3">
-                <div className="text-7xl font-black text-nkumba-yellow tracking-tighter">FRI</div>
+                <div className="text-7xl font-black text-nkumba-yellow tracking-tighter">WKLY</div>
                 <div className="text-2xl font-bold text-white uppercase tracking-widest">Sessions</div>
                 <div className="h-px w-16 bg-white/10 my-2" />
                 <div className="text-slate-400 text-sm">Starting at</div>
