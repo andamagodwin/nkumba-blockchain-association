@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "@/components/ui/Navbar";
-import BorderGlow from "@/components/ui/BorderGlow";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import Aurora from "@/components/ui/Aurora";
@@ -233,41 +232,35 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <BorderGlow className="h-full" glowColor="223 67 35" colors={['#1D3E93', '#F2ED00', '#173277']}>
-              <div className="p-8 h-full flex flex-col">
-                <div className="mb-6">
-                  <Code size="40" color="#F2ED00" variant="Bulk" />
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">Web3 Development</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  Learn to build DApps using React, Ethers.js, and modern blockchain frameworks. Connect the web to the blockchain.
-                </p>
+            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 h-full flex flex-col hover:bg-white/[0.04] transition-colors">
+              <div className="mb-6">
+                <Code size="40" color="#F2ED00" variant="Bulk" />
               </div>
-            </BorderGlow>
+              <h4 className="text-xl font-bold text-white mb-3">Web3 Development</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Learn to build DApps using React, Ethers.js, and modern blockchain frameworks. Connect the web to the blockchain.
+              </p>
+            </div>
 
-            <BorderGlow className="h-full" glowColor="59 100 47" colors={['#F2ED00', '#1D3E93', '#173277']}>
-              <div className="p-8 h-full flex flex-col">
-                <div className="mb-6">
-                  <SecuritySafe size="40" color="#F2ED00" variant="Bulk" />
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">Smart Contracts</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  Master Solidity and Rust to write secure, scalable smart contracts that power the decentralized economy.
-                </p>
+            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 h-full flex flex-col hover:bg-white/[0.04] transition-colors">
+              <div className="mb-6">
+                <SecuritySafe size="40" color="#F2ED00" variant="Bulk" />
               </div>
-            </BorderGlow>
+              <h4 className="text-xl font-bold text-white mb-3">Smart Contracts</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Master Solidity and Rust to write secure, scalable smart contracts that power the decentralized economy.
+              </p>
+            </div>
 
-            <BorderGlow className="h-full" glowColor="223 67 35" colors={['#173277', '#F2ED00', '#1D3E93']}>
-              <div className="p-8 h-full flex flex-col">
-                <div className="mb-6">
-                  <MoneySend size="40" color="#F2ED00" variant="Bulk" />
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">DeFi & Tokenomics</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  Explore the world of Decentralized Finance, liquidity pools, and the economic models behind successful protocols.
-                </p>
+            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 h-full flex flex-col hover:bg-white/[0.04] transition-colors">
+              <div className="mb-6">
+                <MoneySend size="40" color="#F2ED00" variant="Bulk" />
               </div>
-            </BorderGlow>
+              <h4 className="text-xl font-bold text-white mb-3">DeFi & Tokenomics</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Explore the world of Decentralized Finance, liquidity pools, and the economic models behind successful protocols.
+              </p>
+            </div>
           </div>
         </Section>
 
